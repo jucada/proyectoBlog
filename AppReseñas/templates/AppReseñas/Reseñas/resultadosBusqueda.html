@@ -1,0 +1,34 @@
+{% extends 'AppReseñas/padre.html' %}
+
+{% block head %}
+    <title>Resultados búsqueda</title>
+{% endblock head %}
+
+{% block body %}
+    <h1>Has buscado las reseñas de: {{busqueda}}</h1>
+
+{% endblock body %}
+
+{% block reseñas %}
+
+{% if resultados %}
+
+{% for r in resultados %}
+
+    <p>Reseña hecha por :{{r.autor}}</p>
+    <p>De la película: {{r.nombre}}, dirigida por {{r.director}} del año {{r.año}}</p>
+    <p>Calificación: {{r.puntaje}}</p>
+    <p>Reseña: {{r.reseña}}</p>
+
+    <p>********************************************************</p>
+
+{% endfor %}
+
+{% else %}
+
+<p>No hay reseñas de esa película.</p>
+
+{% endif %}
+
+
+{% endblock %}

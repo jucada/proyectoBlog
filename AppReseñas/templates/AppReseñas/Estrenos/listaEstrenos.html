@@ -1,0 +1,37 @@
+{% extends 'AppReseñas/padre.html' %}
+
+{% block head %}
+    <title>Próximos estrenos</title>
+{% endblock head %}
+
+{% block body %}
+    <h1>En esta sección puedes encontrar los estrenos próximos.</h1>
+
+{% endblock body %}
+
+{% block reseñas %}
+
+<a href="{% url 'Añadir Estrenos' %}">Añadir un nuevo estreno.</a>
+
+{% for e in resultados %}
+
+    <p>Nombre de la película :{{e.nombre}}</p>
+    <p>Fecha de estreno: {{e.fecha}}</p>
+
+    <img src="{{e.imagen.url}}" alt="No hay imagen.">
+
+
+    <button>
+        <a href="{% url 'Editar Estreno' e.nombre %}">Editar el estreno.</a>
+    
+    </button>
+
+
+    <p>********************************************************</p>
+
+{% endfor %}
+
+
+
+
+{% endblock %}

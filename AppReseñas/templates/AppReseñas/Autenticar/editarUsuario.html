@@ -1,0 +1,31 @@
+{% extends "AppReseñas/padre.html" %}
+
+{% load static %}
+
+
+{% block body %}
+
+    <h1>Formulario - Editar Usuario</h1>
+
+
+    {%if miFormulario.errors %}
+
+    <p style="color: red">Están mal los datos</p>
+
+    {% endif %}
+
+
+    <form action="" method="POST"> {%csrf_token%}
+
+        <table>
+
+            {{miFormulario.as_table}}
+
+        </table>
+
+        <input type="submit", value="Enviar", style="color:red">
+
+    </form>
+
+
+{% endblock %}

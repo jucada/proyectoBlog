@@ -1,0 +1,27 @@
+{% extends 'AppReseñas/padre.html' %}
+
+{% block head %}
+    <title>Añadir reseñas</title>
+{% endblock head %}
+
+{% block body %}
+    <h1>En esta sección puedes añadir reseñas de películas</h1>
+
+{% endblock body %}
+
+{% block reseñas %}
+
+<form action="" method="POST">  {% csrf_token %}
+
+    <table>
+
+        {{form.as_table}}
+
+    </table>
+
+    <input type="submit" value="Enviar">
+
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'AppReseñas/padre.html' %}
+
+{% block head %}
+    <title>Blog de Peliculas</title>
+{% endblock head %}
+
+{% block body %}
+    <h1>{{mensaje}}</h1>
+    <h1>Bienvenidos a mi Blog de Películas!</h1>
+    <p>He creado este blog para que puedan opinar sobre sus películas favoritas y añadir nuevos estrenos.</p>
+{% endblock body %}
+
+{% block reseñas %}
+<div class="col-lg-4">
+    <!-- Search widget-->
+    <div class="card mb-4">
+        <form action="/AppReseñas/buscar/" method="GET">
+            <div class="card-header">Buscar Reseñas</div>
+            <div class="card-body">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Ingresa el nombre..." name="reseña" id="reseña" />
+                    <input type="submit" value="Buscar">
+                </div>
+            </div>
+        </form>
+        
+    </div>
+</div>
+{% endblock %}
